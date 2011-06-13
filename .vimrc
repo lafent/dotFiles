@@ -1,6 +1,6 @@
-" Name: .vimrc 
-" Date: 11-FEB-2011
-" Author: Lee Fent <lee.fent@gmail.com>
+" Name:     .vimrc 
+" Date:     13-JUNE-2011
+" Author:   Lee Fent <lee.fent@gmail.com>
 set nocompatible
 
 " Colors
@@ -41,6 +41,11 @@ set showmatch
 set backupdir=~/.vim/tmp/backup/ " backups
 set directory=~/.vim/tmp/swap/   " swap files
 set backup                       " enable backups
+
+" Soft/Hard Wrapping
+set wrap
+set textwidth=79
+set colorcolumn=79
 
 " Basic options
 if has('gui_running')
