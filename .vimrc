@@ -1,56 +1,49 @@
-" Name:     .vimrc 
-" Date:     13-JUNE-2011
-" Author:   Lee Fent <lee.fent@gmail.com>
+" A minimal vimrc for new vim users to start with.
+" vim:set ts=2 sts=2 sw=2 expandtab:
+
+call pathogen#infect()
+" This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" Colors
-set background=dark
-colors koehler
+" Make backspace behave in a sane manner.
+set backspace=indent,eol,start
 
-" Appearance
+" Switch syntax highlighting on
+syntax on
+
+" Enable file type detection and do language-dependent indenting.
+filetype plugin indent on
+
+" *************************************************************************** "
+" @author: Lee Fent <lee.fent@gmail.com>
+" *************************************************************************** "
+" Tabs and Spaces
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set autoindent
+
+" Line Numbers and Ruler
 set number
 set ruler
-set showcmd
-set showmode
-set visualbell
 set cursorline
 
-" Mobility and Translations
-set backspace=indent,eol,start
-set ttyfast
-
-" Searching
-set incsearch
-set ignorecase
-set smartcase
-set history=50
-set gdefault
-
-" Spacing, Tabs and Formatting
-syntax enable
-set nowrap
-set autoindent
-set expandtab
-set softtabstop=4
-set tabstop=4
-set shiftwidth=4
-set encoding=utf-8
+" Search 
 set showmatch
+set incsearch
+set hlsearch
 
-" Backup and Swap
-set backupdir=~/.vim/tmp/backup/ " backups
-set directory=~/.vim/tmp/swap/   " swap files
+" Enable consistent backup and swap directories instead of leaving files
+" littered about the file system.
+set backupdir=~/.tmp/vim/backup/ " backups
+set directory=~/.tmp/vim/swap/   " swap files
 set backup                       " enable backups
 
-" Soft/Hard Wrapping
-set wrap
-set textwidth=79
-set colorcolumn=79
+" Colors setups
+set background=dark
+colorscheme Tomorrow-Night-Bright " vibrantink 
+set colorcolumn=81
 
-" Basic options
-if has('gui_running')
-    set guifont=Consolas:h12
-    colorscheme koehler
-    set background=dark
-endif
+nnoremap <F5> :GundoToggle<CR>
 
