@@ -15,8 +15,8 @@ data.location=~/.task
 
 # Holidays
 include /usr/share/taskwarrior/holidays.en-US.rc
-# calendar.holidays=full
-calendar.holidays=sparse
+calendar.holidays=full
+# calendar.holidays=sparse
 
 # General Tasks
 default.priority=M

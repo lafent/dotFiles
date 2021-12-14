@@ -12,8 +12,8 @@ set background=dark
 set number
 set ruler
 set showcmd
-set showmode
-set visualbell
+" set showmode
+" set visualbell
 set cursorline
 
 " turn off .viminfo generation

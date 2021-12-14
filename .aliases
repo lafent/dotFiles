@@ -9,14 +9,15 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 
-alias tb='task unblocked'
+alias tb='clear && task unblocked'
 alias tcal='clear && task calendar'
 alias tlb='clear && task burndown.daily'
 alias tl='clear && task cal && task unblocked due.before:1mo'
 alias tld='clear && task cal && task unblocked due:today'
 alias tlt='clear && task cal && task unblocked due:tomorrow'
-alias tt='task completed end.after:today'
-alias ty='task completed end.after:yesterday end.before:today'
+alias tt='clear && task completed end.after:today'
+alias ty='clear && task completed end.after:yesterday end.before:today'
+alias tap='task add project:Personal +uncategorized due:1mo'
 
 # The rest of my fun git aliases
 alias gl='git pull --prune'
@@ -36,11 +37,4 @@ alias gac='git add -A && git commit -m'
 alias ge='git-edit-new'
 
 alias ducks='du -cks * | sort -rn | head -11'
-
-alias tao='task add project:OSU +uncategorized due:1mo'
-alias tam='task add project:MU +uncategorized due:1mo'
-alias tap='task add project:Personal +uncategorized due:1mo'
-
 alias dammit='sudo $(history -p \!\!)' 
-
-alias angband='angband -mgcu -snone'
