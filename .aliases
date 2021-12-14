@@ -1,0 +1,46 @@
+if [ "$TERM" != "dumb" ]; then
+    eval "`dircolors -b`"
+    alias ls='ls --color=auto'
+    alias dir='ls --color=auto --format=vertical'
+    alias vdir='ls --color=auto --format=long'
+fi
+
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -CF'
+
+alias tb='task unblocked'
+alias tcal='clear && task calendar'
+alias tlb='clear && task burndown.daily'
+alias tl='clear && task cal && task unblocked due.before:1mo'
+alias tld='clear && task cal && task unblocked due:today'
+alias tlt='clear && task cal && task unblocked due:tomorrow'
+alias tt='task completed end.after:today'
+alias ty='task completed end.after:yesterday end.before:today'
+
+# The rest of my fun git aliases
+alias gl='git pull --prune'
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+alias gp='git push origin HEAD'
+
+# Remove `+` and `-` from start of diff lines; just rely upon color.
+alias gd='git diff --color | sed "s/^\([^-+ ]*\)[-+ ]/\\1/" | less -r'
+
+alias gc='git commit'
+alias gca='git commit -a'
+alias gco='git checkout'
+alias gcb='git copy-branch-name'
+alias gb='git branch'
+alias gst='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
+alias gac='git add -A && git commit -m'
+alias ge='git-edit-new'
+
+alias ducks='du -cks * | sort -rn | head -11'
+
+alias tao='task add project:OSU +uncategorized due:1mo'
+alias tam='task add project:MU +uncategorized due:1mo'
+alias tap='task add project:Personal +uncategorized due:1mo'
+
+alias dammit='sudo $(history -p \!\!)' 
+
+alias angband='angband -mgcu -snone'
