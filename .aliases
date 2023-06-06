@@ -41,3 +41,7 @@ alias ge='git-edit-new'
 alias ducks='du -cks * | sort -rn | head -11'
 alias dammit='sudo $(history -p \!\!)' 
 alias wttr='clear && curl -4 https://wttr.in/~Shawnee+Kansas\?m'
+
+alias pm=openpomodoro-cli
+
+alias angband='angband -mgcu'

@@ -1,7 +1,7 @@
 #config {tintin char} {/}
 
 /session midian 95.217.184.173 3456
-/config verbatim off
+/config verbatim on
+/config {verbatim char} ;
 /ticker idle {;;} 300
 /split
-
