@@ -28,7 +28,6 @@ alias gp='git push origin HEAD'
 
 # Remove `+` and `-` from start of diff lines; just rely upon color.
 alias gd='git diff --color | sed "s/^\([^-+ ]*\)[-+ ]/\\1/" | less -r'
-
 alias gc='git commit'
 alias gca='git commit -a'
 alias gco='git checkout'
@@ -37,10 +36,15 @@ alias gb='git branch'
 alias gst='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
 alias gac='git add -A && git commit -m'
 alias ge='git-edit-new'
+alias grso='git remote show origin'
+alias glcolor='git log --oneline --decorate --graph --all'
 
 alias ducks='du -cks * | sort -rn | head -11'
 alias dammit='sudo $(history -p \!\!)' 
 alias wttr='clear && curl -4 https://wttr.in/~Shawnee+Kansas\?m'
+
+alias tls='tmux list-sessions'
+alias ta='tmux attach -t '
 
 alias pm=openpomodoro-cli
 
