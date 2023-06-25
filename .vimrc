@@ -1,9 +1,37 @@
 " Name: .vimrc 
 " Date: 03-MAY-2011
 " Author: Lee Fent <lee.fent@gmail.com>
-execute pathogen#infect()
 
 set nocompatible
+
+if has('nvim')
+    " NeoVim only commands go here
+else
+    " Standard only commands go here
+    execute pathogen#infect()
+
+    " Clojure Support
+    au VimEnter * RainbowParenthesesToggle
+    au Syntax * RainbowParenthesesLoadRound
+    au Syntax * RainbowParenthesesLoadSquare
+    au Syntax * RainbowParenthesesLoadBraces
+    let g:rbpt_colorpairs = [
+        \ ['brown',       'RoyalBlue3'],
+        \ ['Darkblue',    'SeaGreen3'],
+        \ ['darkgreen',   'firebrick3'],
+        \ ['darkcyan',    'RoyalBlue3'],
+        \ ['darkred',     'SeaGreen3'],
+        \ ['darkmagenta', 'DarkOrchid3'],
+        \ ['brown',       'firebrick3'],
+        \ ['gray',        'RoyalBlue3'],
+        \ ['darkmagenta', 'DarkOrchid3'],
+        \ ['Darkblue',    'firebrick3'],
+        \ ['darkgreen',   'RoyalBlue3'],
+        \ ['darkcyan',    'SeaGreen3'],
+        \ ['darkred',     'DarkOrchid3'],
+        \ ['red',         'firebrick3'],
+        \ ]
+endif
 
 " Colors
 set background=dark
@@ -91,6 +119,7 @@ nmap <C-L> <C-W><C-L>
 nmap <F7> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
 " No hidden files in NERDTree
 let NERDTreeShowHidden = 1
 
@@ -104,42 +133,11 @@ let g:syntastic_php_phpcs_args='--standard=PSR2 -n'
 let g:Illuminate_delay = 250
 let g:Illuminate_ftblacklist = ['nerdtree']
 
-" Clojure Support
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-let g:rbpt_colorpairs = [
-    \ ['brown',       'RoyalBlue3'],
-    \ ['Darkblue',    'SeaGreen3'],
-    \ ['darkgreen',   'firebrick3'],
-    \ ['darkcyan',    'RoyalBlue3'],
-    \ ['darkred',     'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['brown',       'firebrick3'],
-    \ ['gray',        'RoyalBlue3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['Darkblue',    'firebrick3'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['darkcyan',    'SeaGreen3'],
-    \ ['darkred',     'DarkOrchid3'],
-    \ ['red',         'firebrick3'],
-    \ ]
 
 " Lightline setup
 set laststatus=2
 set noshowmode
-let g:lightline = {
-      \ 'colorscheme': 'powerline',
-      \ }
-" Powerline setup
-" set fillchars+=stl:\ ,stlnc:\
-" let g:airline_powerline_fonts=1 
-" let g:airline_theme='solarized'
-" let g:airline_solarized_normal_green=1
-" let g:Powerline_symbols='fancy'
-" set encoding=utf-8
-" set termencoding=utf-8
-" set t_Co=256
+let g:lightline = { 'colorscheme': 'powerline', }
+
 " Enable *.md as a markdown file
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
