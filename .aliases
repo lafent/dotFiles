@@ -5,10 +5,6 @@
 #     alias vdir='ls --color=auto --format=long'
 # fi
 
-# alias ll='ls -l'
-# alias la='ls -A'
-# alias l='ls -CF'
-
 alias tb='clear && task unblocked'
 alias tcal='clear && task calendar'
 alias tlb='clear && task burndown.daily'
@@ -40,12 +36,16 @@ alias grso='git remote show origin'
 alias glcolor='git log --oneline --decorate --graph --all'
 
 alias ducks='du -cks * | sort -rn | head -11'
+
 alias dammit='sudo $(history -p \!\!)' 
+
 alias wttr='clear && curl -4 https://wttr.in/~Shawnee+Kansas\?m'
 
 alias tls='tmux list-sessions'
 alias ta='tmux attach -t '
 
-alias pm=openpomodoro-cli
+# alias pm=openpomodoro-cli
 
 alias angband='angband -mgcu'
+
+alias el='elinks https://duckduckgo.com/'
